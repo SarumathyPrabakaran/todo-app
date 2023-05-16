@@ -12,12 +12,12 @@
         <input type="text" name="todo" id = "todo">
         <button type = "submit">SUBMIT</button>
     </form>
-    {% if now %}
+    
     <ul>
         {% for i in l %}
         <li> {{i.title}}</li>
         {% endfor %}
     </ul>
-    {% endif %}
+    
 </body>
 </html>
