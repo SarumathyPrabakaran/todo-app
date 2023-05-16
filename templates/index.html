@@ -5,19 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY TODOS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        html, body {
+            height: 80%;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        .container {
+            padding-left: 15px;
+            padding-right: 25px;
+        }
+    </style>
+
 </head>
 <body>
-    <form action = "/", method = "post">
-        Your todo:
-        <input type="text" name="todo" id = "todo">
-        <button type = "submit">SUBMIT</button>
-    </form>
+   
+    <div class="container">
+        <h1> My Todos </h1>
+        <form action="/" method="post" class="m-3">
+            <div class="input-group">
+                <input type="text" name="todo" id="todo" class="form-control" placeholder="Your todo">
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
+            </div>
+        </form>
+        
+        <ul class="list-group">
+            {% for i in l %}
+            <li class="list-group-item">{{ i.title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
     
-    <ul>
-        {% for i in l %}
-        <li> {{i.title}}</li>
-        {% endfor %}
-    </ul>
     
 </body>
 </html>
